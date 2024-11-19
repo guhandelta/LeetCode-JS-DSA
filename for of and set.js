@@ -1,4 +1,5 @@
 const removeDuplicates = (nestedArr) => {
+
 // Initialize an empty Set to store seen values
 const seen = new Set();
 
@@ -39,3 +40,22 @@ const cleanedArray = removeDuplicates(nestedArr);
 
 // Print the cleaned array
 console.log("Cleaned array:\t", cleanedArray);
+
+
+/*
+
+    Space Complexity:
+
+    O(N): The space complexity is linear with respect to the total number of elements (N) in the nested array.
+    The seen Set stores at most N unique elements.
+    The results array stores at most N unique elements.
+    The uniqueArr array, in the worst case, can store all elements of a sub-array, but it's reused for each sub-array.
+    Time Complexity:
+
+    O(N): The time complexity is also linear with respect to the total number of elements (N).
+    The outer loop iterates over each sub-array, which takes O(M) time for a sub-array of size M.
+    The inner loop iterates over each element in the sub-array, which takes O(M) time.
+    The Set.has() operation has an average time complexity of O(1).
+    Therefore, the total time complexity is O(M1 + M2 + ... + Mn) = O(N), where N is the total number of elements in the nested array.
+
+*/
