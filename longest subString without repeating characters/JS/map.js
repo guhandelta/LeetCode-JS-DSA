@@ -1,5 +1,4 @@
 
-JavaScript
 
 function longestSubStringWithNoRepatingCharacters(s) {
     // Initialize pointers, maximum length, and a map to store character indices

@@ -32,7 +32,6 @@ console.log('Resule:\t', cleanedArray);
 
 
 /*
-
 Maps in JavaScript: A Quick Overview
 
 A Map is a data structure that stores key-value pairs. Unlike objects, Maps allow any data type as keys, not just strings. In the provided code, the seen Map is used to keep track of elements encountered.

@@ -11,9 +11,11 @@ const arr = [
 const removeDuplicates = arr.reduce(({ seen, results }, curr) => {
     // Filter out duplicates from the current array
     const cleanedArray = curr.filter(val => {
-        // If the value hasn't been seen before, add it to the 'seen' set and keep it
+        // If the value hasn't been seen before,.. 
         if (!seen.has(val)) {
             seen.add(val);
+            
+            //.. add it to the 'seen' set and keep it
             return true;
         }
         // Otherwise, discard the duplicate
