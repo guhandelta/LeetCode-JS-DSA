@@ -25,7 +25,7 @@ const removeDuplicates = arr.reduce(({ seen, results }, curr) => {
     // Add the cleaned array to the 'results' array
     results.push(cleanedArray);
 
-    // Return the updated 'seen' set and 'results' array for the next iteration
+    // Return the updated 'seen' set and 'results' array, which becomes the accumulator for the next iteration, so in each subsequent element in the original array can build upon the 'seen' set and 'results' array from the previous steps.
     return { seen, results };
 
 // Initial state for the reduce function: an empty Set to track seen values and an empty array for results

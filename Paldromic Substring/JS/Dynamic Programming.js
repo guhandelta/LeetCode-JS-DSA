@@ -1,4 +1,4 @@
-// Dynamic Programming (Efficient, good for understanding pattern
+// Dynamic Programming (Efficient, good for understanding pattern)
 function longestPalindromeDP(s) {
     // Handle edge cases: empty or single-character strings
     if (!s || s.length <= 1) return s;

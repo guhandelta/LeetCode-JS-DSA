@@ -31,6 +31,7 @@ function longestSubStringWithNoRepatingCharacters(s) {
 
 
 const str = "abbccabcd"
-const [ longestSubString, maxLen] = longestSubStringWithNoRepatingCharacters(str)
+const [ longestSubString, maxLen ] = longestSubStringWithNoRepatingCharacters(str)
 console.log(`String lenght:\t ${maxLen}`);
 console.log(`subString:\t ${longestSubString}`);
+
