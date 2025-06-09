@@ -46,3 +46,17 @@ const test = "abcabcbb";
 const [longestSubString, maxLen] = longestSubStringWithNoRepatingCharacters(test);
 console.log("longestSubStringWithNoRepatingCharacters:\t", longestSubString);
 console.log("maxLen:\t", maxLen);
+
+
+
+// Hypermedia Response
+{
+    "id": 123,
+    "name": "Arumugam",
+    "links": [
+        { "rel": "edit", "method": "PUT", "href": "/users/123" },
+        { "rel": "delete", "method": "DELETE", "href": "/users/123" }
+    ]
+}
+
+
