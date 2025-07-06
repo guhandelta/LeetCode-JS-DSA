@@ -52,4 +52,40 @@ var removeNthFromEnd = function(head, n) {
         Worst Place to Use:
             - For large linked lists where a single traversal solution is more appropriate.
             - In performance-critical systems where time optimization is essential.
-*/
+*/ 
+
+function ListNode(val, next = null) {
+    this.val = val;
+    this.next = next;
+}
+
+function removeNthNode(head, n){
+    
+    const dummy = new ListNode();
+    dummy.next = head;
+
+    const current = dummy;
+    const stack = [];
+
+    while(current){
+        stack.push(current);
+        current.next;
+    }
+
+    const len = stack.length;
+
+    const target = len-n;
+
+    let i;
+
+    for(i=0;i<target;i++){
+        stack.pop();
+    }
+
+    const prev = stack[stack.length-1];
+    prev = prev.next.next;
+
+    return dummy.next;
+
+
+}

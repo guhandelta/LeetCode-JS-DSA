@@ -1,6 +1,6 @@
 // Sample array of arrays
 const nestedArr = [
-    [1, 2, 3, 4, 3, 4],
+      [1, 2, 3, 4, 3, 4],
     [3, 4, 2, 4, 5, 2, 5, 4, 6],
     [7, 2, 4, 3, 8, 4, 9],
 ];
@@ -95,3 +95,107 @@ Key Differences and When to Use Which:
 In the given code, using a Set is the most efficient and straightforward approach for removing duplicates from the nested array.
 
 */
+
+
+
+// 1. Types & Intrfaces
+// ✅ Use interface for component props
+// ✅ Use type for unions, intersections, utility types
+
+// interface - extensible
+interface UserProps {
+    name: string;
+    age: number;
+}
+
+// type - flexible
+type Status = 'success' | 'error' | 'loading';
+
+// - -- --- ---- ----- ---- --- -- -
+
+// 2. Props
+
+// ✅ Enforces strict prop typing
+// ❌ Avoid using any for props
+
+type ButtonProps = {
+    label: string;
+    onClick: () => void;
+};
+
+const Button = ({ label, onClick }: ButtonProps) => (
+    <button onClick={onClick}>{label}</button>
+);
+
+// - -- --- ---- ----- ---- --- -- -
+
+// 3. useState<T> with Generics
+
+// ✅ Ensures consistent state types
+// 🧠 Useful when state starts as null
+
+const [count, setCount] = useState<number>(0);
+const [user, setUser] = useState<UserProps | null>(null);
+
+// - -- --- ---- ----- ---- --- -- -
+
+// 4. Union & Literal Types
+
+// ✅ Guarantees theme is either 'light' or 'dark'
+
+const [count, setCount] = useState<number>(0);
+const [user, setUser] = useState<UserProps | null>(null);
+
+type Theme = 'light' | 'dark';
+const ThemeSwitcher = ({ theme }: { theme: Theme }) => (
+    <div>{theme === 'dark' ? '🌙' : '☀️'}</div>
+);
+
+enum Role {
+    Admin = 'admin',
+    User = 'user',
+}
+
+const Welcome = ({ role }: { role: Role }) => (
+    <h1>Welcome, {role}</h1>
+);
+
+// - -- --- ---- ----- ---- --- -- -
+
+// 5. Enums
+
+// ✅ Makes code readable for roles, status, types
+
+type User = {
+    age: number;
+     name: string;
+    email?: string;
+};
+
+type PartialUser = Partial<User>; // All fields optional
+type NameOnly = Pick<User, 'name'>;
+type NoEmail = Omit<User, 'email'>;
+type StrictUser = Required<User>; // All fields required
+
+const roles = ['admin', 'user'] as const;
+type Role = typeof roles[number];
+const isValidRole = (r: Role) => roles.includes(r);
+
+// - -- --- ---- ----- ---- --- -- -
+
+// 6. Utility Types: Partial, Pick, Omit, Required
+
+type User = {
+    name: string;
+    age: number;
+    email?: string;
+};
+
+type PartialUser = Partial<User>; // All fields optional
+type NameOnly = Pick<User, 'name'>;
+type NoEmail = Omit<User, 'email'>;
+type StrictUser = Required<User>; // All fields required
+
+
+// ✅ Perfect for flexible form types, API payloads
+

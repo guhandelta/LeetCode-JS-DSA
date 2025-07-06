@@ -1,32 +1,6 @@
 
 
 
-
-function findMedianByBinarySearch(nums1, nums2){
-
-    if(nums1.length > nums2.length){
-        [nums1, nums2] = [nums2, nums1];
-    }
-
-    const l1=nums1.length, l2=nums2.length;
-    const totalLength = l1 + l2;
-    const halfLength = totalLength/2;
-
-    let left = 0, right = l1;
-
-    while(left<=right){
-        const partitionX = Math.floor((left+right)/2);
-        const partitionY = totalLength-halfLength;
-
-        
-    }
-
-}
-
-
-Explain the step by step execution of the code with nums1 = [12,23,34,45,56,67,78] and nums2 = [79,89,910,1011] as the two sorted arrays
-
-
 /**
  * Find the median of two sorted arrays using binary search approach
  * This achieves O(log(min(m,n))) time complexity with O(1) space
@@ -61,12 +35,16 @@ function findMedianSortedArrays(nums1, nums2) {
         // Find the four boundary elements around the partition
         // minX: Last element from nums1 on the left side || The largest element in the left partition of nums1. If partitionX is 0 (meaning no elements are taken from the left of nums1), use Number.NEGATIVE_INFINITY.
         const minX = partitionX === 0 ? Number.NEGATIVE_INFINITY : nums1[partitionX - 1];
+        
         // maxX: First element from nums1 on the right side || The smallest element in the right partition of nums1. If partitionX is m (meaning all elements are taken from the left of nums1), use Number.POSITIVE_INFINITY.
         const maxX = partitionX === m ? Number.POSITIVE_INFINITY : nums1[partitionX];
+        
         // minY: Last element from nums2 on the left side || The largest element in the left partition of nums2. If partitionY is 0, use Number.NEGATIVE_INFINITY.
         const minY = partitionY === 0 ? Number.NEGATIVE_INFINITY : nums2[partitionY - 1];
+        
         // maxY: First element from nums2 on the right side || The smallest element in the right partition of nums2. If partitionY is n, use Number.POSITIVE_INFINITY.
         const maxY = partitionY === n ? Number.POSITIVE_INFINITY : nums2[partitionY];
+        
         
         // Check if we found the correct partition
         if (maxX <= minY && maxY <= minX) {
