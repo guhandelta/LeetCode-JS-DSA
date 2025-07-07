@@ -130,3 +130,5 @@ const l1 = new ListNode(12, new ListNode(23, new ListNode(34, new ListNode(45, n
 const cleanedList = removeNthFromEnds(l1, 4);
 
 printList(cleanedList)
+
+

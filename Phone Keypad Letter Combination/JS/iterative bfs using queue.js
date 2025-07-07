@@ -13,7 +13,7 @@ function letterCombinations(digits) {
     
     const queue = []; // 3. A queue holding the empty prefix.
 
-    for(digit of digits){ // 4. Iterate once per digit (outer loop controls levels).
+    for(const digit of digits){ // 4. Iterate once per digit (outer loop controls levels).
         const next = [];  // 5. Temporary array to hold next-level prefixes.
 
         for(const prefix of queue){ // 6. Pop each partial combination in the current level…
