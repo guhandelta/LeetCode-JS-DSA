@@ -10,24 +10,41 @@
 
 function threeSumHash(nums, target){ 
 
-    if(!nums || nums.length===0 || !target) return;
+    if(!nums || nums.length<3){
 
-    let i, j, len = nums.length;
-    const out = new Set();
-
-    for(i=0;i<len;i++){
-        const seen = new Set();
-        for(j=i+1;j<len;j++){
-            const compliment = target - nums[i] - nums[j];
-
-            if(seen.has(compliment)){           // 6️⃣ If we’ve seen it, we found a triple.
-                const triplet = [nums[i], nums[j], compliment].sort((a,b) => a-b);  
-                out.add(triplet.toString())     // 7️⃣ Serialize to dedup efficiently.
-            }
-            seen.add(nums[j])                   // 8️⃣ Keep current j reachable for future checks.
+        console.log('The input array should atleast have 3 elements');
+        return{
+            exactmatch: null,
+            lesserTriplet: null,
+            greaterTriplet: null,
         }
+    } 
+    
+    const len=nums.length;
+    
+    for(let i=0;i<len-2;i++){
+        
+        
+        let left = i+1, right = nums.len-1;
+        
+        const currentSum = nums[i] + nums[left] + nums[right];
+        if(currentSum === target){
+            
+            return{
+                exactmatch: [nums[i], nums[left], nums[right]],
+                lesserTriplet: null,
+                greaterTriplet: null,
+            }
+        }
+        if(currentSum < target){
+            const diff = target - Math.abs(nums[i] + nums[left] + nums[right]);
+            const closestDiff = 
+
+        }else{
+            
+        }
+
     }
-    return [...out].map(str => str.split(',').map(Number))
 }
 
 
@@ -38,6 +55,8 @@ function threesumHash(nums, target){
     let i, j;
 
     const len = nums.length, out = new Set();
+
+    if(!nums || nums.length < 3) return 'The input array should have atleast 3 elements';
 
     for(i=0;i<len;i++){
         const seen = new Set();

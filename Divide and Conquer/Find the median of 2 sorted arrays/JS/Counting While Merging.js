@@ -67,6 +67,3 @@ function findMedianSortedArrays(nums1, nums2) {
 const nos1 = [23,34,45,56,67,78], nos2 = [34,45,56,67,78,89];
 console.log(`The Median of the sorted arrays is ${findMedianSortedArrays(nos1, nos2)}`);
 
-
-
-

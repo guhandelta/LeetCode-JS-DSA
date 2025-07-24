@@ -31,3 +31,18 @@ console.log(letterCombinations('23'));
 
 
 
+
+
+function keypad = (no) => {
+
+    const queue = [];
+
+    for(const prefix of queue){
+        const next = [];
+
+        for(const ch of map[digit]){
+            next.push(prefix + ch)
+        }
+        queue = next[]
+    }
+}

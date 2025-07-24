@@ -50,3 +50,75 @@ function threeSumBruteForce(nums, target = 0) {       // API: array + desired su
 //   }
 //   return bestSum;                                 // 🔚  Closest sum encountered.
 // }
+
+
+function threeSum(arr, k){
+    if(arr.length === 0 || k===null) return;
+
+    const len = arr.length;
+    
+    for(let i=0;i<len;i++){
+        for(let j=i+1;j<len;j++){
+            for(let l=j+1;l<len;l++){
+                if(arr[i]+arr[j]+arr[l] === k){
+                    return [ arr[i], arr[j], arr[l] ]
+                }
+            }
+        }
+    }
+    
+    return 'The sum is attainable'
+}
+
+function threeSum(arr, k){
+    if(arr.length === 0) return [];
+    
+    const len = arr.length;
+    
+    const given = arr.sort((a,b) => a-b);
+    
+    const res = new Set();
+    
+    for(let i=0;i<len;i++){
+        if(i>0 & given[i] === given[i-1]) continue;
+        for(let j=i+1;j<len;j++){
+            const compliment = k - given[i] - given[j];
+
+            const triplet = [compliment, given[i], given[j]].sort((a,b) => a-b);
+
+
+
+        
+        }
+    }
+    return 'The sum is attainable'
+}
+
+
+
+
+function findMissingValue(arr){
+
+    if(arr.length === 0) return 'Invalid array'
+
+    const len = arr.length;
+
+    for(let i=0;i<n;i++){
+        while(
+            i>0 &&
+            i<n &&
+            arr[arr[i]-1] !== arr[i]
+        ){
+            const validIndex = arr[i]-1;
+            
+            [arr[i], arr[validIndex]] = [arr[validIndex], arr[i]]
+        }
+    }
+    for(let i=0;i<n;i++){
+        if(nums[i] !== i+1){
+            return i+1 //Smallest missing positive
+        }
+    }
+
+    return n + 1 // If teh order is correct, the missing number is n+1
+}
