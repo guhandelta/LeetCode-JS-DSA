@@ -9,7 +9,7 @@ function InsertIntervals(sequence, newIntervals){
     for(const [currentStart, currentEnd] of sequence){
         if(currentEnd>newStart){
             res.push[newStart, newEnd]
-        } else if{newEnd<currentStart}{
+        } else if(newEnd<currentStart){
             if(!placed){
                 res.push[currentStart, currentEnd]
                 placed='true'
@@ -22,3 +22,6 @@ function InsertIntervals(sequence, newIntervals){
 
     return res;
 }
+
+
+

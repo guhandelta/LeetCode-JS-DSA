@@ -44,38 +44,6 @@ function reverseKGroupRecursive(head, k) {
     return prev;
 }
 
-
-function ListNode(val, next){
-    this.next = next?next:null;
-    this.val= val ?? 0
-}
-
-
-function reverseKNodesTest(head, k){
-
-    const pointer = new ListNode(0, head);
-
-    let i;
-
-    while(i<k){
-        pointer=pointer.next;
-    }
-
-    const revNodes = reverseKNodesTest(pointer, k)
-    
-    const prev=revNodes;
-    const curr=head;
-
-    for(i=0;i<k;i++){
-        const nxTmp = curr.next;
-        curr.next=prev;
-        prev=curr;
-        curr=nxTmp;
-    }
-
-    return prev;
-}
-
 function printList(head){
 
     let pointer = new ListNode(head), out=[];
